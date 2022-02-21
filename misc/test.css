@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.menu_btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu_btn_burger {
+    width: 50px;
+    height: ;
+}
