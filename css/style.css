@@ -6,18 +6,28 @@
 
 #grid_wrapper {
     display: grid;
-    grid-template-columns: minmax(150px, 1fr) 200px;
-    grid-template-rows: 100px 1fr 1fr 200px ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 600px 150px ;
     grid-template-areas: 
-    "he bu"
-    "s1 gm"
-    "tl s2"
-    "fo fo"
+    "he"
+    "co"
+    "fo"
     ;
 } 
 
+header {
+    grid-area: he;
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 200px;
+    grid-template-rows: 100px;
+    background: rgb(10, 10, 10);
+    grid-template-areas: 
+    "h1 bu"
+    ;
+}
+
 #logo_header {
-    height: 90px;
+    height: 100px;
     margin-left: 25px;
 }
 
@@ -26,17 +36,17 @@
     height:170px;
 }
 
-header {
-    background-color: rgb(0, 0, 0);
-    grid-area: he;
+#header_grid {
+    background-image: linear-gradient( rgb(30, 30, 30), black);
     display: flex;
     align-items: center;
     justify-content: left;
     padding: 1rem;
+    grid-area: h1;
 }
 
 #burger_menu {
-    background-color:rgb(0, 0, 0);
+    background-image: linear-gradient(rgb(30, 30, 30), black);
     grid-area: bu;
     display: flex;
     justify-content: flex-end;
@@ -89,24 +99,72 @@ header {
     background-color:rgb(0, 0, 0);
     position: absolute;
     right: 0px;
-    top: -90vh;
+    top: -900px;
     width: 200px;
     list-style: none;
-    transition: all 0.5s;
+    transition: 0.3s;
 }
 
 #link_list a:hover {
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    background-color: yellow;
     transition: ease 0.4s;
 }
 
 .nav-active {
-    transform: translateY(100vh);
+    transform: translateY(1000px);
 
 }
 
 #burger {
     margin-right: 87.5px;
     cursor: pointer;
+}
+
+footer {
+    grid-area: fo;
+    background-image: linear-gradient(rgb(30, 30, 30), black);
+}
+
+#container_home {
+    background-color: red;
+    grid-area: co;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "t1 gm"
+    "sc t2"
+    ;
+
+}
+
+#container_game {
+    background-color: yellow;
+
+}
+
+#text_1 {
+    background-color: royalblue;
+    grid-area: t1;
+}
+
+#game {
+    background-color: seagreen;
+    grid-area: gm;
+}
+
+#text_2 {
+    background-color: yellow;
+    grid-area: t2;
+}
+
+#score {
+    background-color: orange;
+    grid-area: sc;
+}
+
+@media screen and (min-width: 800px){
+
+    
 }
