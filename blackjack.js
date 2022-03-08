@@ -13,22 +13,16 @@ let blackjackGame = {
     score: 0,
   },
 
-  cards: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "K", "J", "Q", "A"],
+  cards: ["h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "hK", "hJ", "hQ", "hA",
+          "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "dK", "dJ", "dQ", "dA",
+          "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "sK", "sJ", "sQ", "sA",
+          "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "cK", "cJ", "cQ", "cA"],
 
   cardsMap: {
-    2: 2,
-    3: 3,
-    4: 4,
-    5: 5,
-    6: 6,
-    7: 7,
-    8: 8,
-    9: 9,
-    10: 10,
-    K: 10,
-    J: 10,
-    Q: 10,
-    A: [1, 11],
+    h2: 2, h3: 3, h4: 4, h5: 5, h6: 6, h7: 7, h8: 8, h9: 9, h10: 10, hK: 10, hJ: 10, hQ: 10, hA: [1, 11],
+    s2: 2, s3: 3, s4: 4, s5: 5, s6: 6, s7: 7, s8: 8, s9: 9, s10: 10, sK: 10, sJ: 10, sQ: 10, sA: [1, 11],
+    d2: 2, d3: 3, d4: 4, d5: 5, d6: 6, d7: 7, d8: 8, d9: 9, d10: 10, dK: 10, dJ: 10, dQ: 10, dA: [1, 11],
+    c2: 2, c3: 3, c4: 4, c5: 5, c6: 6, c7: 7, c8: 8, c9: 9, c10: 10, cK: 10, cJ: 10, cQ: 10, cA: [1, 11],
   },
 
   wins: 0,
@@ -41,10 +35,6 @@ let blackjackGame = {
 
 const YOU = blackjackGame["you"];
 const DEALER = blackjackGame["dealer"];
-
-const hitSound = new Audio("sounds/swish.m4a");
-const winSound = new Audio("sounds/cash.mp3");
-const loseSound = new Audio("sounds/aww.mp3");
 
 let windowWidth = window.screen.width;
 let windowHeight = window.screen.height;
@@ -69,22 +59,21 @@ function blackjackHit() {
     let card = randomCard();
     showCard(card, YOU);
     updateScore(card, YOU);
-    showScore(YOU);
+    showScore(YOU)
   }
 }
 
-function randomCard() {
-  let randomIndex = Math.floor(Math.random() * 13);
+function randomCard() {   //funktion som väljer slumpmässigt kort från kortleken
+  let randomIndex = Math.floor(Math.random() * 52);
   return blackjackGame["cards"][randomIndex];
 }
 
 function showCard(card, activePlayer) {
   if (activePlayer["score"] <= 21) {
     let cardImage = document.createElement("img");
-    cardImage.src = `images/${card}.png`;
+    cardImage.src = `img/card_deck/${card}.png`;
     cardImage.style = `width:${widthSize()}; height:${heightSize()};`;
     document.querySelector(activePlayer["div"]).appendChild(cardImage);
-    hitSound.play();
   }
 }
 
@@ -93,7 +82,7 @@ function widthSize() {
     let newWidthSize = window.screen.width * 0.1;
     return newWidthSize;
   } else {
-    return window.screen.width * 0.18;
+    return window.screen.width * 0.1;
   }
 }
 
@@ -102,11 +91,11 @@ function heightSize() {
     let newHeightSize = window.screen.height * 0.18;
     return newHeightSize;
   } else {
-    return window.screen.height * 0.15;
+    return window.screen.height * 0.18;
   }
 }
 
-function updateScore(card, activePlayer) {
+function updateScore(card, activePlayer) {    //Funktionen uppdaterar statistiken för vad spelaren och dealerns hand är värda
   if (card === "A") {
     if (activePlayer["score"] + blackjackGame["cardsMap"][card][1] <= 21) {
       activePlayer["score"] += blackjackGame["cardsMap"][card][1];
@@ -179,23 +168,19 @@ function showWinner(winner) {
     message = "You Won";
     messageColor = "#00e676";
     document.querySelector("#wins").textContent = blackjackGame["wins"] += 1;
-    winSound.play();
   } else if (winner === DEALER) {
     message = "You Lost";
     messageColor = "red";
     document.querySelector("#losses").textContent = blackjackGame[
       "losses"
     ] += 1;
-    loseSound.play();
   } else if (winner === "Draw") {
     message = "You Drew";
     messageColor = "yellow";
     document.querySelector("#draws").textContent = blackjackGame["draws"] += 1;
-    loseSound.play();
   } else if (winner === "None") {
     message = "You Both Busted!";
     messageColor = "orange";
-    loseSound.play();
   }
 
   document.querySelector("#blackjack-result").textContent = message;
