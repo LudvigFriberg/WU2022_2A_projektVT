@@ -1,4 +1,4 @@
-let blackjackGame = {
+let blackjackGame = {     //setup 
   you: {
     scoreSpan: "#your-blackjack-result",
     div: "#your-box",
@@ -13,16 +13,16 @@ let blackjackGame = {
     score: 0,
   },
 
-  cards: ["h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "hK", "hJ", "hQ", "hA",
+  cards: ["h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "hK", "hJ", "hQ", "hA",  //En array som innehåller namn för alla kort
           "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "dK", "dJ", "dQ", "dA",
           "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "sK", "sJ", "sQ", "sA",
           "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "cK", "cJ", "cQ", "cA"],
 
   cardsMap: {
-    h2: 2, h3: 3, h4: 4, h5: 5, h6: 6, h7: 7, h8: 8, h9: 9, h10: 10, hK: 10, hJ: 10, hQ: 10, hA: [1, 11],
+    h2: 2, h3: 3, h4: 4, h5: 5, h6: 6, h7: 7, h8: 8, h9: 9, h10: 10, hK: 10, hJ: 10, hQ: 10, hA: [1, 11],    //En "map" som bestämmer värde på alla korten. Alla ess är arrayer med 2 olika värden för att kunna representera riktiga ess
     s2: 2, s3: 3, s4: 4, s5: 5, s6: 6, s7: 7, s8: 8, s9: 9, s10: 10, sK: 10, sJ: 10, sQ: 10, sA: [1, 11],
     d2: 2, d3: 3, d4: 4, d5: 5, d6: 6, d7: 7, d8: 8, d9: 9, d10: 10, dK: 10, dJ: 10, dQ: 10, dA: [1, 11],
-    c2: 2, c3: 3, c4: 4, c5: 5, c6: 6, c7: 7, c8: 8, c9: 9, c10: 10, cK: 10, cJ: 10, cQ: 10, cA: [1, 11],
+    c2: 2, c3: 3, c4: 4, c5: 5, c6: 6, c7: 7, c8: 8, c9: 9, c10: 10, cK: 10, cJ: 10, cQ: 10, cA: [1, 11]
   },
 
   wins: 0,
@@ -72,31 +72,14 @@ function showCard(card, activePlayer) {
   if (activePlayer["score"] <= 21) {
     let cardImage = document.createElement("img");
     cardImage.src = `img/card_deck/${card}.png`;
-    cardImage.style = `width:${widthSize()}; height:${heightSize()};`;
+    cardImage.style = `width:100px; height:200px;`;
     document.querySelector(activePlayer["div"]).appendChild(cardImage);
   }
 }
 
-function widthSize() {
-  if (windowWidth > 1000) {
-    let newWidthSize = window.screen.width * 0.1;
-    return newWidthSize;
-  } else {
-    return window.screen.width * 0.1;
-  }
-}
-
-function heightSize() {
-  if (windowHeight > 700) {
-    let newHeightSize = window.screen.height * 0.18;
-    return newHeightSize;
-  } else {
-    return window.screen.height * 0.18;
-  }
-}
 
 function updateScore(card, activePlayer) {    //Funktionen uppdaterar statistiken för vad spelaren och dealerns hand är värda
-  if (card === "A") {
+  if (card[1] === "A") {
     if (activePlayer["score"] + blackjackGame["cardsMap"][card][1] <= 21) {
       activePlayer["score"] += blackjackGame["cardsMap"][card][1];
     } else {
@@ -106,14 +89,18 @@ function updateScore(card, activePlayer) {    //Funktionen uppdaterar statistike
     activePlayer["score"] += blackjackGame["cardsMap"][card];
   }
 
+  }
+
+
   console.log(activePlayer["score"]);
-}
+
 
 function showScore(activePlayer) {
   //Bust logic if score is over 21
   if (activePlayer["score"] > 21) {
     document.querySelector(activePlayer["scoreSpan"]).textContent = "BUST!";
     document.querySelector(activePlayer["scoreSpan"]).style.color = "red";
+    blackjackStand()
   } else {
     document.querySelector(activePlayer["scoreSpan"]).textContent =
       activePlayer["score"];
