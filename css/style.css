@@ -779,6 +779,16 @@ top: 85px;
 
 @media screen and (min-width:800px){
 
+      #grid_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 100vh 150px ;
+        grid-template-areas: 
+        "he"
+        "co"
+        "fo"
+        ;
+    } 
 
     .burger_line {
         display: none;
@@ -805,7 +815,7 @@ top: 85px;
         top: 0;
         background-color:rgba(0, 0, 0, 0);
         width: 60vw;
-        height: 20vh;
+        height: 100px;
         margin-right: 5vw;
         position: unset;
         border-bottom-style: solid;
@@ -934,10 +944,14 @@ top: 85px;
     
     header {
         position: unset;
+        top: 0px;
+        height: 100px;
+        grid-template-rows: 100px;
+
     }
 
     #grid_wrapper_about {
-        grid-template-rows: 20vh 800px 150px ;
+        grid-template-rows: 100px 800px 150px ;
     }
     #container_about {
         grid-area: co;
