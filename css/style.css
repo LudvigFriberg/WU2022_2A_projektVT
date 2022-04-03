@@ -7,7 +7,7 @@
 #grid_wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 100vh 150px ;
+    grid-template-rows: 20vh 100vh 150px ;
     grid-template-areas: 
     "he"
     "co"
@@ -19,14 +19,15 @@ header {
     grid-area: he;
     display: grid;
     grid-template-columns: 200px minmax(200px, 1fr);
-    grid-template-rows: 100px;
+    grid-template-rows: 20vh;
     background-image: linear-gradient( rgb(30, 30, 30), black);
     grid-template-areas: 
     "h1 bu"
     ;
     border-bottom-style: solid;
     border-color: rgb(94, 94, 94);
-    
+    width: 100%;
+    position: fixed;
 }
 
 #logo_header {
@@ -64,23 +65,19 @@ header {
 }
 
 .crossed_line #line_2 {
-    transition: all 0.5s;
+    transition: all 0s;
     opacity: 0;
 }
 
 .crossed_line #line_1 {
-    transform: rotate(-225deg) translate(9px, -2px);
+    transform: rotate(-225deg) translate(9px, -6px);
     transition: all 0.5s;
-    position: fixed;
-    margin-left: 10px;
     background-image:radial-gradient( rgb(220, 0, 0), red);
 }
 
 .crossed_line #line_3 {
-    transform: rotate(225deg) translate(9px, 2px);
+    transform: rotate(225deg) translate(9px, 6px);
     transition: all 0.5s;
-    position: fixed;
-    margin-left: 10px;
     background-image:radial-gradient( rgb(220, 0, 0), red);
 
 }
@@ -93,7 +90,7 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
     width: 100vw;
-    height: 25vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,11 +103,11 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     background-image: linear-gradient( rgb(30, 30, 30), black);
     position: absolute;
     right: 0px;
-    top: -1000px;
+    top: -80vh;
     width: 100vw;
     list-style: none;
     transition: 0.3s;
@@ -123,8 +120,12 @@ header {
     transition: ease-in-out 0.4s;
 }
 
+.nav-active header {
+    position: fixed;
+}
+
 .nav-active {
-    transform: translateY(1000px);
+    transform: translateY(100vh);
 
 }
 
@@ -577,7 +578,7 @@ top: 85px;
 #grid_wrapper_about {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1200px 150px ;
+    grid-template-rows: 20vh 1150px 150px ;
     grid-template-areas: 
     "he"
     "co"
@@ -589,51 +590,191 @@ top: 85px;
     height: 100%;
     width: 100%;
     grid-area: co;
-    background-color: coral;
     display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows:50px 300px 300px 50px 450px 50px  ;
+    grid-template-columns: 1fr;
+    grid-template-rows:25px 300px 25px 300px 25px 450px 25px;
     grid-template-areas:
     "u1"
     "ka"
-    "ms"
     "u2"
-    "sy"
+    "ms"
     "u3"
+    "sy"
+    "u4"
     ;
   }
 
   #utfyllnad_1 {
     grid-area: u1;
-    background-color: white;
+    background-image: linear-gradient(black ,rgb(50, 50, 50));
   }
 
   #utfyllnad_2 {
     grid-area: u2;
-    background-color: white;
+    background-image: linear-gradient(black ,rgb(50, 50, 50));
 
   }
 
   #utfyllnad_3 {
     grid-area: u3;
-    background-color: white;
+    background-image: linear-gradient(black ,rgb(50, 50, 50));
   }
+
+  #utfyllnad_4 {
+    grid-area: u4;
+    background-image: linear-gradient(black ,rgb(50, 50, 50));
+  }
+
 
   #kontakter_about {
     grid-area: ka;
-    background-color: violet;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: rgb(94, 94, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
+
+  #kontakter_about_2 {
+    height: 200px;
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(94, 94, 94);
+    background-image: linear-gradient(rgb(50, 50, 50), black);
+
+  }
+  
+  #kontakter_about_2 a {
+    color: rgb(200, 200, 200);
+    font-family: sans-serif;
+    text-decoration: none;
+    margin-left: 5vw;
+  }
+  #kontakter_about_2 :hover {
+    color: white;
+    text-decoration: underline;
+}
+
 
   #google_maps {
     grid-area: ms;
-    background-color: yellow;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: rgb(94, 94, 94);
   }
 
-  #syfte {
-      grid-area: sy;
-      background-color: tomato;
+  #google_maps a {
+    color: rgb(200, 200, 200);
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    text-decoration: none;
   }
 
+  #google_maps :hover {
+    color: white;
+    text-decoration: underline;
+}
+
+  #google_maps img {
+    height: 200px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(94, 94, 94);
+
+  }
+
+
+
+  #syfte_container {
+    grid-area: sy;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-color: rgb(94, 94, 94);
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 3fr 2fr;
+    grid-template-areas: 
+    "be be"
+    "ia si"
+    ;
+  }
+
+  #ålder_img {
+    grid-area: si;
+    height: 150px;
+    width: 150px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    border-style: solid;
+    border-color: rgb(94, 94, 94);
+    border-radius: 5px;
+  }
+
+  #ålder_img img {
+    height: 130px;
+  }
+
+  #beroende {
+    grid-area: be;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    border-style: solid;
+    border-color: rgb(94, 94, 94);
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .rubriker_about {
+    color: rgb(200, 200, 200);
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .about_brödtext {
+    color: rgb(170, 170, 170);
+    text-align: center;
+    margin: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+  }
+
+  #ingen_åldersgräns {
+    grid-area: ia;
+    background-image: linear-gradient(rgb(40, 40, 40), black);
+    border-style: solid;
+    border-color: rgb(94, 94, 94);
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
 
 
 @media screen and (min-width:800px){
@@ -664,7 +805,7 @@ top: 85px;
         top: 0;
         background-color:rgba(0, 0, 0, 0);
         width: 60vw;
-        height: 100px;
+        height: 20vh;
         margin-right: 5vw;
         position: unset;
         border-bottom-style: solid;
@@ -684,7 +825,7 @@ top: 85px;
         display: flex;
         justify-content: center;
         align-items: center;
-        
+        border-style: none;
     }
 
     .nav-active {
@@ -791,4 +932,85 @@ top: 85px;
         grid-area: to;
     }
     
+    header {
+        position: unset;
+    }
+
+    #grid_wrapper_about {
+        grid-template-rows: 20vh 800px 150px ;
+    }
+    #container_about {
+        grid-area: co;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:25px 325px 25px 400px 25px;
+        grid-template-areas:
+        "u1 u1"
+        "ka ms"
+        "u2 u2"
+        "sy sy"
+        "u3 u3"
+        ;
+      }
+
+      #kontakter_about {
+        border-right-style: solid;
+      }
+    
+      #kontakter_about_2 {
+        height: 200px;
+        width: 450px;
+      }
+    
+      #google_maps img {
+        margin-bottom: 40px;
+      }
+    
+      #syfte_container {
+        height: 400px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 2fr;
+        grid-template-areas: 
+        "be ia"
+        "be si"
+        ;
+      }
+    
+      #ålder_img {
+        height: 150px;
+        width: 150px;
+        margin-bottom: 20px;
+        margin-left: 400px;
+      }
+    
+      #ålder_img img {
+        height: 130px;
+      }
+    
+      #beroende {
+        border-radius: 5px;
+        margin-bottom: 70px;
+      }
+    
+      .rubriker_about {
+        color: rgb(200, 200, 200);
+        margin-top: 20px;
+        font-family: sans-serif;
+        font-size: 2rem;
+      }
+    
+      .about_brödtext {
+        color: rgb(170, 170, 170);
+        text-align: center;
+        margin: 20px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.25rem;
+      }
+    
+      #ingen_åldersgräns {
+        margin-top: 30px;
+        margin-right: 30px; 
+
+      }
 }
