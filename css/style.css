@@ -20,9 +20,13 @@ header {
     display: grid;
     grid-template-columns: 200px minmax(200px, 1fr);
     grid-template-rows: 100px;
+    background-image: linear-gradient( rgb(30, 30, 30), black);
     grid-template-areas: 
     "h1 bu"
     ;
+    border-bottom-style: solid;
+    border-color: rgb(94, 94, 94);
+    
 }
 
 #logo_header {
@@ -36,7 +40,6 @@ header {
 }
 
 #header_grid {
-    background-image: linear-gradient( rgb(30, 30, 30), black);
     display: flex;
     align-items: center;
     justify-content: left;
@@ -45,7 +48,6 @@ header {
 }
 
 #burger_menu {
-    background-image: linear-gradient(rgb(30, 30, 30), black);
     grid-area: bu;
     display: flex;
     justify-content: flex-end;
@@ -62,17 +64,25 @@ header {
 }
 
 .crossed_line #line_2 {
+    transition: all 0.5s;
     opacity: 0;
 }
 
 .crossed_line #line_1 {
-    transform: rotate(-225deg) translate(9px, -6px);
-    transition: all 0.5s
+    transform: rotate(-225deg) translate(9px, -2px);
+    transition: all 0.5s;
+    position: fixed;
+    margin-left: 10px;
+    background-image:radial-gradient( rgb(220, 0, 0), red);
 }
 
 .crossed_line #line_3 {
-    transform: rotate(225deg) translate(9px, 6px);
-    transition: all 0.5s
+    transform: rotate(225deg) translate(9px, 2px);
+    transition: all 0.5s;
+    position: fixed;
+    margin-left: 10px;
+    background-image:radial-gradient( rgb(220, 0, 0), red);
+
 }
 
 #link_list a {
@@ -87,6 +97,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom-style: solid;
+    border-color: rgb(30, 30, 30);
 }
 
 #link_list {
@@ -95,13 +107,14 @@ header {
     justify-content: space-around;
     align-items: center;
     height: 100vh;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient( rgb(30, 30, 30), black);
     position: absolute;
     right: 0px;
-    top: -900px;
+    top: -1000px;
     width: 100vw;
     list-style: none;
     transition: 0.3s;
+    position: fixed;
 }
 
 #link_list a:hover {
@@ -129,7 +142,9 @@ footer {
     grid-template-areas: 
     "ma"
     "po"
-    ;
+    ;    
+    border-top-style: solid;
+    border-color: rgb(94, 94, 94);
 }
 
 #info_footer {
@@ -152,6 +167,7 @@ footer {
 .footer_style a {
     text-decoration: none;
     color: rgb(200, 200, 200);
+    font-size: 1.1rem;
 }
 
 .footer_style a:hover {
@@ -160,6 +176,9 @@ footer {
     text-decoration: underline;
 }
 
+#footer_picture {
+    display: none;
+}
 
 
 #container_home {
@@ -179,17 +198,12 @@ footer {
 }
 
 #text_1 {
-    background-color: rgba(65, 105, 225, 0.164);
     grid-area: t1;
 }
 
-#game {
-    background-color: rgba(46, 139, 86, 0.226);
-    grid-area: gm;
-}
+
 
 #text_2 {
-    background-color: rgba(163, 163, 145, 0.288);
     grid-area: t2;
 }
 
@@ -247,15 +261,62 @@ footer {
     grid-area: to;
 }
 
+#game {
+    grid-area: gm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.game_button_home {
+    height: 44vh;
+    width: auto;
+}
 
+#game_button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#hidden_card {
+    position: absolute;    
+    top: 3vh;
+}
+
+#ha {
+    position: absolute;    
+    top: 3vh;
+}
+
+#hk {
+    position: absolute;    
+    top: 3vh;
+}
+
+#hq {
+    position: absolute;    
+    top: 3vh;
+}
+
+#hj {
+    position: absolute;    
+    top: 3vh;
+}
+
+.game_button_active {
+    height: 50vh;
+}
 
 
 #container_game {
     background: url("https://image.freepik.com/free-vector/poker-table-background-green-color_47243-1073.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    grid-area: co;
   }
 
   .container {
@@ -316,7 +377,267 @@ footer {
     color: yellow;
   }
   
+
+
+  #container_log_in {
+    height: 100vh;
+    margin: 0px;
+    background-image: url(../img/homepage_background.jpg);
+    background-size: 140%;
+    background-position: center;
+
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #back_arrow {
+    width: 70px;
+    height: 40px;
+    background-image: linear-gradient(rgb(230, 230, 230), rgb(255, 255, 255));
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #back_arrow img {
+    height: 30px;
+    width: auto;
+  }
+
+  #back_arrow :hover {
+    width: 70px;
+    height: 40px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: white;    
+    transition: 0.1s;
+  }
+
+  #log_in_img {
+    margin-top: -50px;
+    width: 70vw;
+    display: flex;  
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  #log_in_img img {
+    height: 150px;
+    position: absolute;
+  }
+
+  .active #age_log_in {
+    display: none;
+
+  }
+
+  #log_in_box {
+      background-color: white;
+      height: 300px;
+      width: 350px;
+      border-radius: 5px;
+      border-style: solid;
+      border-color: rgb(170, 170, 170);
+      display: flex;
+      justify-content: center;
+      position: relative;
+  }
+
+
+  #new_account {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 1rem;
+    text-decoration: underline;
+    
+  }
+  #old_account {
+    position: absolute;
+    font-size: 0.85rem;
+    right: 80px;
+    bottom: 10px;
+    color: rgb(70, 70, 70);
+    display: none;
+
+  }
+
+  #log_in_old_account {
+      position: absolute;
+      font-size: 1rem;
+      bottom: 10px;
+      right: 30px;
+      text-decoration: underline;
+      display: none;
+  }
+
+  #log_in_section {
+    height: 260px;
+    width: 330px;
+    border-radius: 5px;
+    border-color: rgb(200, 200, 200);
+    border-style: solid;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+  #username {
+    margin-top: 30px;
+    height: 2.5rem;
+    background-color: white;
+    width: 300px;
+    border-radius: 5px;
+    border-color: rgb(20, 20, 20);
+    border-style: solid;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #password {
+    margin-top: 30px;
+    height: 2.5rem;
+    background-color: white;
+    width: 300px;
+    border-radius: 5px;
+    border-color: rgb(20, 20, 20);
+    border-style: solid;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #log_in_button {
+    background-image: linear-gradient( rgb(26, 206, 26), rgb(13, 136, 13));
+    height: 50px;
+    width: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    margin-top: 40px;
+    border-color: rgb(3, 141, 37);
+    border-style: solid;
+    text-decoration: none;
+}
+
+
+#log_in_button :hover {
+    background-image: linear-gradient( rgb(53, 255, 53), rgb(23, 187, 23));
+    height: 50px;
+    width: 290px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: rgb(3, 218, 21);
+}
+
+#log_in_button p {
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    width: 290px;
+}
+
+#username_2 {
+position: absolute;
+top: 15px;
+left: 30px;
+}
+
+#password_2 {
+position: absolute;
+left: 30px;
+top: 85px;
+}
+
+#grid_wrapper_about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1200px 150px ;
+    grid-template-areas: 
+    "he"
+    "co"
+    "fo"
+    ;
+} 
+
+#container_about {
+    height: 100%;
+    width: 100%;
+    grid-area: co;
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows:50px 300px 300px 50px 450px 50px  ;
+    grid-template-areas:
+    "u1"
+    "ka"
+    "ms"
+    "u2"
+    "sy"
+    "u3"
+    ;
+  }
+
+  #utfyllnad_1 {
+    grid-area: u1;
+    background-color: white;
+  }
+
+  #utfyllnad_2 {
+    grid-area: u2;
+    background-color: white;
+
+  }
+
+  #utfyllnad_3 {
+    grid-area: u3;
+    background-color: white;
+  }
+
+  #kontakter_about {
+    grid-area: ka;
+    background-color: violet;
+  }
+
+  #google_maps {
+    grid-area: ms;
+    background-color: yellow;
+  }
+
+  #syfte {
+      grid-area: sy;
+      background-color: tomato;
+  }
+
+
+
 @media screen and (min-width:800px){
+
 
     .burger_line {
         display: none;
@@ -345,6 +666,9 @@ footer {
         width: 60vw;
         height: 100px;
         margin-right: 5vw;
+        position: unset;
+        border-bottom-style: solid;
+        border-color: rgb(94, 94, 94);
 
     }
 
@@ -372,6 +696,53 @@ footer {
         transition: ease 0.1s;
         background-color: rgb(0, 0, 0, 0);
     }
+
+    footer {
+    grid-area: fo;
+    background-image: linear-gradient(rgb(30, 30, 30), black);
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "ma po pi"
+    ;
+}
+
+#footer_picture {
+    grid-area: pi;
+    display: initial;
+}
+
+#info_footer {
+    grid-area: ma;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 1.3rem;
+    height: 150px;
+}
+
+#policy_and_about {
+    grid-area: po;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 150px;
+}
+
+.footer_style a {
+    text-decoration: none;
+    color: rgb(200, 200, 200);
+}
+
+.footer_style a:hover {
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
 
     #div_score {
         background-image: linear-gradient(rgb(30, 30, 30), black);

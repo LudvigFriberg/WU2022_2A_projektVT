@@ -7,37 +7,16 @@
     <title>Arabella's Online Casino</title>
     <link rel="icon" href="img/logo_notext.png" type="logga">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blackjack.css">
 </head>
 <body>
    
    <div id="grid_wrapper">
 
-        <header>
-            <div id="header_grid">
-                        <a href="index.html"><img id="logo_header" src="img/arabella_casino_logo.png" alt="casino logga"></a>
-                        <img id="header_text" src="img/header_text.png" alt="tex till header">
-            </div>
-
-            <nav id="burger_menu">           
-                <ul id="link_list">
-                    <li><a class="meny_länk" href="index.html">Home</a></li>
-                    <li><a class="meny_länk" href="game.html">Play</a></li>
-                    <li><a class="meny_länk" href="log_in.html">Log In</a></li>
-                    <li><a class="meny_länk" href="about.html">About</a></li>
-                </ul>
-
-                <div id="burger">
-                    <div id="line_1" class="burger_line"></div>
-                    <div id="line_2" class="burger_line"></div>
-                    <div id="line_3" class="burger_line"></div>
-                </div>
-            </nav>
-        </header>
-
         <div id="container_game">
             <div class="container">
                 <h2>Black<span style="color: black">jack</span></h2>
-                <h3><span id="blackjack-result">Let's Play </span></h3>
+
           
                 <div class="flex-blackjack-row-1">
                   <table>
@@ -54,7 +33,9 @@
                     </tr>
                   </table>
                 </div>
-          
+
+                <h3><span id="blackjack-result">Let's Play </span></h3>
+                
                 <div class="flex-blackjack-row-2">
                   <div id="your-box">
                     <h2>You: <span id="your-blackjack-result"> 0</span></h2>
@@ -82,14 +63,42 @@
                   </div>
                 </div>
               </div>
-              <script src="blackjack.js"></script>
-          
-        </div>
+              <script src="js/blackjack.js"></script>        
+            </div>
 
-        <footer>
-            
 
-        </footer>
+        <header>
+          <div id="header_grid">
+                      <a href="index.html"><img id="logo_header" src="img/arabella_casino_logo.png" alt="casino logga"></a>
+          </div>
+
+          <nav id="burger_menu">           
+              <ul id="link_list">
+                  <li><a class="meny_länk" href="index.html">Home</a></li>
+                  <li><a class="meny_länk" href="game.html">Play</a></li>
+                  <li><a class="meny_länk" href="log_in.html">Log In</a></li>
+                  <li><a class="meny_länk" href="about.html">About</a></li>
+              </ul>
+
+              <div id="burger">
+                  <div id="line_1" class="burger_line"></div>
+                  <div id="line_2" class="burger_line"></div>
+                  <div id="line_3" class="burger_line"></div>
+              </div>
+          </nav>
+      </header>
+
+      <footer>
+        <article id="info_footer" class="footer_style">
+            <a href="#">Mail : arabella.casino@info.se</a>
+            <a target="_blank" href="https://www.google.com/maps/place/NTI+Gymnasiet+Johanneberg/@57.6905167,11.9725919,17z/data=!3m1!4b1!4m5!3m4!1s0x464ff30cb0e6c031:0x512e1a3cb4192a9!8m2!3d57.6905156!4d11.9747733">Adress : Origovägen 4, 412 58 Göteborg</a>
+        </article>
+        <article id="policy_and_about" class="footer_style">
+            <a href="#">Policy</a>
+            <a href="about.html">Om oss</a>
+        </article>
+        <img id="footer_picture" src="img/footer_decoration.png" alt="dekoration_footer">
+      </footer>
 
    </div>
 

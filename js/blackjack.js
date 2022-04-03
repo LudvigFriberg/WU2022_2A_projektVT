@@ -31,6 +31,8 @@ let blackjackGame = {     //setup
   isStand: false,
   isTurnsOver: false,
   pressOnce: false,
+
+  
 };
 
 const YOU = blackjackGame["you"];
@@ -208,6 +210,7 @@ function blackjackDeal() {
     blackjackGame.pressOnce = false;
     blackjackGame["isTurnsOver"] = false;
   }
+
 }
 
 function blackjackRestart() {
