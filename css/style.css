@@ -712,7 +712,7 @@ top: 85px;
     ;
   }
 
-  #ålder_img {
+  #alder_img {
     grid-area: si;
     height: 150px;
     width: 150px;
@@ -726,7 +726,7 @@ top: 85px;
     border-radius: 5px;
   }
 
-  #ålder_img img {
+  #alder_img img {
     height: 130px;
   }
 
@@ -753,7 +753,7 @@ top: 85px;
     font-size: 1.5rem;
   }
 
-  .about_brödtext {
+  .about_brodtext {
     color: rgb(170, 170, 170);
     text-align: center;
     margin: 20px;
@@ -761,7 +761,7 @@ top: 85px;
     font-size: 0.8rem;
   }
 
-  #ingen_åldersgräns {
+  #ingen_aldersgräns {
     grid-area: ia;
     background-image: linear-gradient(rgb(40, 40, 40), black);
     border-style: solid;
@@ -991,14 +991,14 @@ top: 85px;
         ;
       }
     
-      #ålder_img {
+      #alder_img {
         height: 150px;
         width: 150px;
         margin-bottom: 20px;
         margin-left: 400px;
       }
     
-      #ålder_img img {
+      #alder_img img {
         height: 130px;
       }
     
@@ -1014,7 +1014,7 @@ top: 85px;
         font-size: 2rem;
       }
     
-      .about_brödtext {
+      .about_brodtext {
         color: rgb(170, 170, 170);
         text-align: center;
         margin: 20px;
@@ -1022,7 +1022,7 @@ top: 85px;
         font-size: 1.25rem;
       }
     
-      #ingen_åldersgräns {
+      #ingen_aldersgräns {
         margin-top: 30px;
         margin-right: 30px; 
 
