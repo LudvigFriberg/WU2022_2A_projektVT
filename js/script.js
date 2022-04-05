@@ -13,6 +13,5 @@ function toggle_game_button() {
     game.classList.toggle('game_button_active')
 
 }
-
+document
 burger.addEventListener('click', toggleMenu) 
-game.addEventListener('hovered',toggle_game_button)
