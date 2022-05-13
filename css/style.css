@@ -13,6 +13,10 @@
     "co"
     "fo"
     ;
+    background-image: url(../img/homepage_background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 } 
 
 header {
@@ -20,7 +24,8 @@ header {
     display: grid;
     grid-template-columns: 200px minmax(200px, 1fr);
     grid-template-rows: 20vh;
-    background-image: linear-gradient( rgb(30, 30, 30), black);
+    background-image: linear-gradient( rgb(30, 30, 30), rgb(0, 0, 0));
+    
     grid-template-areas: 
     "h1 bu"
     ;
@@ -40,7 +45,7 @@ header {
     height:170px;
 }
 
-#header_grid {
+#header_picture {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -104,7 +109,7 @@ header {
     justify-content: space-around;
     align-items: center;
     height: 80vh;
-    background-image: linear-gradient( rgb(30, 30, 30), black);
+    background-image: linear-gradient( rgb(30, 30, 30), rgb(0, 0, 0));
     position: absolute;
     right: 0px;
     top: -80vh;
@@ -112,6 +117,8 @@ header {
     list-style: none;
     transition: 0.3s;
     position: fixed;
+    border-color: rgb(94, 94, 94, 0.5);
+
 }
 
 #link_list a:hover {
@@ -183,10 +190,6 @@ footer {
 
 
 #container_home {
-    background-image: url(../img/homepage_background.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
     grid-area: co;
     display: grid;
     grid-template-columns: 1fr;
@@ -216,12 +219,12 @@ footer {
 }
 
 #div_score {
-    background-image: linear-gradient(rgb(30, 30, 30), black);
+    background-image: linear-gradient(rgb(30, 30, 30, 0.8), rgb(0, 0, 0, 0.7));
     width: 80vw;
     height: 40vh;
     border-radius: 10px;
     border-style: solid;
-    border-color: rgb(53, 53, 53);
+    border-color: rgb(53, 53, 53, 0.3);
     display: grid;
     grid-template-rows: 10vh, 1fr;
     grid-template-areas:
@@ -308,7 +311,7 @@ footer {
     top: 3vh;
 }
 
-.game_button_active {
+.game_button_active #hidden_card {
     height: 50vh;
 }
 
@@ -400,14 +403,14 @@ footer {
     background-image: linear-gradient(rgb(230, 230, 230), rgb(255, 255, 255));
     border-radius: 5px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(155, 155, 155);
     position: absolute;
     left: 10px;
     top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    box-shadow: 0px 0px 8px 5px #888888;
   }
 
   #back_arrow img {
@@ -420,7 +423,8 @@ footer {
     height: 40px;
     border-style: solid;
     border-radius: 5px;
-    border-color: white;    
+    background-image: linear-gradient(rgb(200, 200, 200), rgb(230, 230, 230));
+    border-color: rgb(193, 193, 193);    
     transition: 0.1s;
   }
 
@@ -444,7 +448,7 @@ footer {
   }
 
   #log_in_box {
-      background-color: white;
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgb(30, 30, 30, 0.5));
       height: 300px;
       width: 350px;
       border-radius: 5px;
@@ -455,6 +459,9 @@ footer {
       position: relative;
   }
 
+  #log_in_box p {
+    color: white;
+  }
 
   #new_account {
     position: absolute;
@@ -502,7 +509,7 @@ footer {
     background-color: white;
     width: 300px;
     border-radius: 5px;
-    border-color: rgb(20, 20, 20);
+    border-color: rgb(151, 151, 151);
     border-style: solid;
     font-size: 1.5rem;
     display: flex;
@@ -516,7 +523,7 @@ footer {
     background-color: white;
     width: 300px;
     border-radius: 5px;
-    border-color: rgb(20, 20, 20);
+    border-color: rgb(200, 200, 200);
     border-style: solid;
     font-size: 1.5rem;
     display: flex;
@@ -584,6 +591,10 @@ top: 85px;
     "co"
     "fo"
     ;
+    background-image: url(../img/homepage_background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 } 
 
 #container_about {
@@ -606,32 +617,28 @@ top: 85px;
 
   #utfyllnad_1 {
     grid-area: u1;
-    background-image: linear-gradient(black ,rgb(50, 50, 50));
   }
 
   #utfyllnad_2 {
     grid-area: u2;
-    background-image: linear-gradient(black ,rgb(50, 50, 50));
 
   }
 
   #utfyllnad_3 {
     grid-area: u3;
-    background-image: linear-gradient(black ,rgb(50, 50, 50));
   }
 
   #utfyllnad_4 {
     grid-area: u4;
-    background-image: linear-gradient(black ,rgb(50, 50, 50));
   }
 
 
   #kontakter_about {
     grid-area: ka;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
     border-top-style: solid;
     border-bottom-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -646,7 +653,7 @@ top: 85px;
     flex-direction: column;
     border-style: solid;
     border-radius: 5px;
-    border-color: rgb(94, 94, 94);
+    border-color: rgb(255, 255, 255);
     background-image: linear-gradient(rgb(50, 50, 50), black);
 
   }
@@ -665,14 +672,14 @@ top: 85px;
 
   #google_maps {
     grid-area: ms;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     border-top-style: solid;
     border-bottom-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: rgb(255, 255, 255);
   }
 
   #google_maps a {
@@ -691,7 +698,7 @@ top: 85px;
     height: 200px;
     border-radius: 5px;
     border-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: rgb(255, 255, 255);
 
   }
 
@@ -699,7 +706,7 @@ top: 85px;
 
   #syfte_container {
     grid-area: sy;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
     border-top-style: solid;
     border-bottom-style: solid;
     border-color: rgb(94, 94, 94);
@@ -720,7 +727,7 @@ top: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
     border-style: solid;
     border-color: rgb(94, 94, 94);
     border-radius: 5px;
@@ -732,7 +739,7 @@ top: 85px;
 
   #beroende {
     grid-area: be;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-image: linear-gradient(rgb(0, 0, 0, 0.8) ,rgb(30, 30, 30, 0.8));
     border-style: solid;
     border-color: rgb(94, 94, 94);
     border-radius: 5px;
@@ -795,7 +802,6 @@ top: 85px;
     }
 
     #container_home {
-        background-color: red;
         grid-area: co;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -813,13 +819,13 @@ top: 85px;
         justify-content: space-between;
         align-items: center;
         top: 0;
-        background-color:rgba(0, 0, 0, 0);
+        background-image: linear-gradient( rgb(0, 0, 0, 0), rgb(0, 0, 0, 0));
         width: 60vw;
         height: 100px;
         margin-right: 5vw;
         position: unset;
         border-bottom-style: solid;
-        border-color: rgb(94, 94, 94);
+        border-color: rgb(0, 0, 0, 0);
 
     }
 
@@ -850,8 +856,9 @@ top: 85px;
 
     footer {
     grid-area: fo;
-    background-image: linear-gradient(rgb(30, 30, 30), black);
+    background-image: linear-gradient(rgb(30, 30, 30, 0.3), rgb(0, 0, 0));
     display: grid;
+    border-color: rgb(205, 205, 205);
     grid-template-columns: 3fr 1fr 3fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
@@ -896,12 +903,12 @@ top: 85px;
 
 
     #div_score {
-        background-image: linear-gradient(rgb(30, 30, 30), black);
+        background-image: linear-gradient(rgb(30, 30, 30, 0.5), rgb(0, 0, 0, 0.5));
         width: 40vw;
         height: 40vh;
         border-radius: 10px;
         border-style: solid;
-        border-color: rgb(53, 53, 53);
+        border-color: rgb(205, 205, 205);
         display: grid;
         grid-template-rows: 10vh, 1fr;
         grid-template-areas:
@@ -947,7 +954,8 @@ top: 85px;
         top: 0px;
         height: 100px;
         grid-template-rows: 100px;
-
+        background-image: linear-gradient( rgb(0, 0, 0, 0.8), rgb(30, 30, 30, 0.2));
+        border-color: rgb(205, 205, 205);
     }
 
     #grid_wrapper_about {

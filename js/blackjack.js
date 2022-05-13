@@ -37,6 +37,12 @@ let blackjackGame = {     //setup
 
 const YOU = blackjackGame["you"];
 const DEALER = blackjackGame["dealer"];
+let i = 0;
+let z = 0;
+current_hand_you = [];
+
+current_hand_dealer = [];
+
 
 let windowWidth = window.screen.width;
 let windowHeight = window.screen.height;
@@ -57,11 +63,14 @@ document
   .addEventListener("click", blackjackRestart);
 
 function blackjackHit() {
+  
   if (play === true) {
     if (blackjackGame["isStand"] === false) {
       let card = randomCard();
+      current_hand_you[i] = card;
+      i += 1
       showCard(card, YOU);
-      updateScore(card, YOU);
+      updateScore(card, YOU, current_hand_you);
       showScore(YOU)
       if (YOU["score"] === 21) {
         blackjackStand()
@@ -85,17 +94,32 @@ function showCard(card, activePlayer) {
   }
 }
 
-function updateScore(card, activePlayer) {    //Funktionen uppdaterar statistiken för vad spelaren och dealerns hand är värda
+function dealer_hidden_card() {
+  
+}
+
+function updateScore(card, activePlayer, current_hand) {    //Funktionen uppdaterar statistiken för vad spelaren och dealerns hand är värda
   if (card[1] === "A") {
     if (activePlayer["score"] + blackjackGame["cardsMap"][card][1] <= 21) {
       activePlayer["score"] += blackjackGame["cardsMap"][card][1];
     } else {
       activePlayer["score"] += blackjackGame["cardsMap"][card][0];
     }
-  } else {
+  } 
+    else {
     activePlayer["score"] += blackjackGame["cardsMap"][card];
   }
-  
+
+  if ((activePlayer["score"] + blackjackGame["cardsMap"][card]) > 21) {
+    x = 0;
+    while (x <= current_hand.length) {
+      if (current_hand[x][1] === "A") {
+        activePlayer["score"] += (blackjackGame["cardsMap"][card] - 10)
+      }
+      x += 1;
+    }
+
+  }
   }
 
 function showScore(activePlayer) {
@@ -106,9 +130,8 @@ function showScore(activePlayer) {
     blackjackGame["isTurnsOver"] = true;
     let card = randomCard();
     showCard(card, DEALER);
-    updateScore(card, DEALER['score']);
+    updateScore(card, DEALER['score'], current_hand_dealer);
     showScore(DEALER['score']);
-
     computeWinner();
     showWinner(winner);
 
@@ -129,11 +152,12 @@ function blackjackStand() {
       while (DEALER['score'] < YOU['score']) {
         let card = randomCard();
         showCard(card, DEALER);
-        updateScore(card, DEALER);
+        z += 1
+        updateScore(card, DEALER, current_hand_dealer);
         showScore(DEALER);
 
       }
-  
+
       blackjackGame["isTurnsOver"] = true;
   
       computeWinner();
@@ -223,16 +247,20 @@ function blackjackDeal() {
       dealerImages[i].remove();
     }
 
-
+    blackjackHit()
+    blackjackHit()
     blackjackGame["isStand"] = false;
     blackjackGame.pressOnce = false;
     blackjackGame["isTurnsOver"] = false;
+    i = 0,
+    z = 0;
     let card = randomCard();
+    current_hand_you = [],
+    current_hand_dealer = [],
     showCard(card, DEALER);
-    updateScore(card, DEALER);
+    updateScore(card, DEALER ,current_hand_dealer);
     showScore(DEALER);
-    blackjackHit()
-    blackjackHit()
+    z += 1
   }
 
 }
@@ -242,7 +270,6 @@ function blackjackRestart() {
   document.querySelector("#wins").textContent = 0;
   document.querySelector("#losses").textContent = 0;
   document.querySelector("#draws").textContent = 0;
-
   blackjackGame.wins = 0;
   blackjackGame.losses = 0;
   blackjackGame.draws = 0;

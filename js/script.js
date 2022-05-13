@@ -10,8 +10,8 @@ function toggleMenu() {
 
 function toggle_game_button() {
     console.log("TEST")
-    game.classList.toggle('game_button_active')
-
 }
+
 document
 burger.addEventListener('click', toggleMenu) 
+game.addEventListener("mouseover", toggle_game_button())
