@@ -6,8 +6,8 @@
 
 #grid_wrapper {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 20vh 100vh 150px ;
+    grid-template-columns: 100vw;
+    grid-template-rows: 15vh 100vh 150px ;
     grid-template-areas: 
     "he"
     "co"
@@ -15,15 +15,31 @@
     ;
     background-image: url(../img/homepage_background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 200%;
     background-position: center;
+} 
+
+#grid_wrapper_game {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15vh 100vh 20px 150px ;
+  grid-template-areas: 
+  "he"
+  "co"
+  "u1"
+  "fo"
+  ;
+  background-image: url(../img/homepage_background.jpg);
+  background-repeat: no-repeat;
+  background-size: 200%;
+  background-position: center;
 } 
 
 header {
     grid-area: he;
     display: grid;
     grid-template-columns: 200px minmax(200px, 1fr);
-    grid-template-rows: 20vh;
+    grid-template-rows: 15vh;
     background-image: linear-gradient( rgb(30, 30, 30), rgb(0, 0, 0));
     
     grid-template-areas: 
@@ -31,12 +47,12 @@ header {
     ;
     border-bottom-style: solid;
     border-color: rgb(94, 94, 94);
-    width: 100%;
+    width: 100vw;
     position: fixed;
 }
 
 #logo_header {
-    height: 100px;
+    height: 85px;
     margin-left: 25px;
 }
 
@@ -95,7 +111,7 @@ header {
     font-size: 2rem;
     text-transform: uppercase;
     width: 100vw;
-    height: 20vh;
+    height: 21.25vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,11 +124,11 @@ header {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 80vh;
+    height: 85vh;
     background-image: linear-gradient( rgb(30, 30, 30), rgb(0, 0, 0));
     position: absolute;
     right: 0px;
-    top: -80vh;
+    top: -85vh;
     width: 100vw;
     list-style: none;
     transition: 0.3s;
@@ -224,7 +240,7 @@ footer {
     height: 40vh;
     border-radius: 10px;
     border-style: solid;
-    border-color: rgb(53, 53, 53, 0.3);
+    border-color: rgba(255, 255, 255);
     display: grid;
     grid-template-rows: 10vh, 1fr;
     grid-template-areas:
@@ -255,7 +271,7 @@ footer {
     font-family: sans-serif;
     font-weight: bold;
     color: rgb(236, 236, 236);
-    background-color: rgb(255, 255, 255, 0.03);
+    background-color: rgb(255, 255, 255, 0.02);
     height: 10vh;
     width: 80vw;
     display: flex;
@@ -289,26 +305,31 @@ footer {
 #hidden_card {
     position: absolute;    
     top: 3vh;
+    right: 3vw;
 }
 
 #ha {
     position: absolute;    
     top: 3vh;
+    right: 3vw;
 }
 
 #hk {
     position: absolute;    
     top: 3vh;
+    right: 3vw;
 }
 
 #hq {
     position: absolute;    
     top: 3vh;
+    right: 3vw;
 }
 
 #hj {
     position: absolute;    
     top: 3vh;
+    right: 3vw;
 }
 
 .game_button_active #hidden_card {
@@ -321,6 +342,9 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     grid-area: co;
+    border-top: rgb(100, 100, 100) solid 1px;
+    border-bottom: rgb(100, 100, 100) solid 1px;
+    
   }
 
   .container {
@@ -328,60 +352,6 @@ footer {
     text-align: center;
     color: white;
   }
-  
-  .flex-blackjack-row-1,
-  .flex-blackjack-row-2,
-  .flex-blackjack-row-3 {
-    display: flex;
-    padding: 5px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  
-  .flex-blackjack-row-2 div {
-    padding: 10px;
-    flex: 1;
-    height: 350px;
-    text-align: center;
-  }
-  
-  .flex-blackjack-row-2 div img {
-    padding: 10px;
-  }
-  
-  table,
-  th,
-  td {
-    padding: 5px;
-    border: 1px solid white;
-    color: white;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .flex-blackjack-row-3 div {
-    padding: 10px;
-  }
-  
-  .flex-blackjack-row-3 button {
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  #win-header {
-    color: lightgreen;
-  }
-  
-  #loss-header {
-    color: #d32f2f;
-  }
-  
-  #draw-header {
-    color: yellow;
-  }
-  
-
 
   #container_log_in {
     height: 100vh;
@@ -593,7 +563,7 @@ top: 85px;
     ;
     background-image: url(../img/homepage_background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 200%;
     background-position: center;
 } 
 
@@ -795,7 +765,26 @@ top: 85px;
         "co"
         "fo"
         ;
+        background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
     } 
+
+    #grid_wrapper_game {
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 15vh 20px 100vh 20px 150px ;
+      grid-template-areas: 
+      "he"
+      "u1"
+      "co"
+      "u2"
+      "fo"
+      ;
+      background-repeat: no-repeat;
+      background-size: 200%;
+      background-position: center;
+    }
 
     .burger_line {
         display: none;
@@ -856,7 +845,7 @@ top: 85px;
 
     footer {
     grid-area: fo;
-    background-image: linear-gradient(rgb(30, 30, 30, 0.3), rgb(0, 0, 0));
+    background-image: linear-gradient(rgb(30, 30, 30, 0.8), rgb(0, 0, 0));
     display: grid;
     border-color: rgb(205, 205, 205);
     grid-template-columns: 3fr 1fr 3fr;
@@ -939,7 +928,7 @@ top: 85px;
         font-family: sans-serif;
         font-weight: bold;
         color: rgb(236, 236, 236);
-        background-color: rgb(255, 255, 255, 0.01);
+        background-color: rgb(255, 255, 255, 0.03);
         height: 10vh;
         width: 40vw;
         display: flex;
@@ -953,8 +942,9 @@ top: 85px;
         position: unset;
         top: 0px;
         height: 100px;
+        width: 100%;
         grid-template-rows: 100px;
-        background-image: linear-gradient( rgb(0, 0, 0, 0.8), rgb(30, 30, 30, 0.2));
+        background-image: linear-gradient( rgb(0, 0, 0, 0.8), rgb(30, 30, 30, 0.8));
         border-color: rgb(205, 205, 205);
     }
 
@@ -1033,6 +1023,28 @@ top: 85px;
       #ingen_aldersgräns {
         margin-top: 30px;
         margin-right: 30px; 
+        
 
       }
+      
+
+      #grid_wrapper_about {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 1150px 150px ;
+        grid-template-areas: 
+        "he"
+        "co"
+        "fo"
+        ;
+        background-image: url(../img/homepage_background.jpg);
+        background-repeat: no-repeat;
+        background-size: 200%;
+        background-position: center;
+    }
+    
+    #logo_header {
+      height: 100px;
+  }
+
 }

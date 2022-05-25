@@ -39,6 +39,7 @@ td {
   color: white;
   align-items: center;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .flex-blackjack-row-3 div {
@@ -47,7 +48,11 @@ td {
 
 .flex-blackjack-row-3 button {
   padding: 10px;
-  margin-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+  border: solid rgba(100, 100, 100) 1px;
+  
 }
 
 #win-header {
@@ -60,4 +65,12 @@ td {
 
 #draw-header {
   color: yellow;
+}
+
+@media screen and (min-width:800px){
+  .flex-blackjack-row-3 div {
+    padding: 10px;
+  
+  }
+
 }

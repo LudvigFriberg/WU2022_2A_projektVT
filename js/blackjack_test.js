@@ -234,8 +234,22 @@ function blackjackDeal() {
     blackjackHit()
     blackjackHit()
   }
-
 }
+
+function ValueAce(currentHand, activeplayer) {
+  if ((activePlayer["score"] + blackjackGame["cardsMap"][card]) > 21) {
+    x = 0;
+    while (x <= currentHand.length && activePlayer['score'] > 21) {
+      if (currentHand[x][1] === "A") {
+        activePlayer["score"] += (blackjackGame["cardsMap"][card] - 10)
+      }
+      x += 1;
+    }
+
+  }
+}
+
+
 
 function blackjackRestart() {
   document.querySelector("#wins").textContent = 0;
