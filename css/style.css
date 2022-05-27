@@ -22,14 +22,13 @@
 #grid_wrapper_game {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 15vh 100vh 20px 150px ;
+  grid-template-rows: 15vh 100vh 150px ;
   grid-template-areas: 
   "he"
   "co"
-  "u1"
   "fo"
   ;
-  background-image: url(../img/homepage_background.jpg);
+  background-image: url(../img/game_background.jpg);
   background-repeat: no-repeat;
   background-size: 200%;
   background-position: center;
@@ -217,6 +216,27 @@ footer {
 
 }
 
+.cards_game {
+  position: absolute;
+  height: 30vh;
+  box-shadow: -1px 0px 3px 1px black;
+  border-radius: 16px;
+  right: 25vw;
+  top: 25vh;
+}
+
+#ha {
+  transform: translateX(-15px) rotate(-10deg);
+}
+
+#hk {
+  transform: translateX(-30px) rotate(-20deg);
+}
+
+#hq {
+  transform: translateX(-45px) rotate(-30deg);
+}
+
 #text_1 {
     grid-area: t1;
 }
@@ -255,12 +275,12 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     grid-area: l5;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
 }
 
 .score {
     text-decoration: none;
-    font-size: 1.25rem;    
+    font-size: 1rem;    
     color: rgb(226, 226, 226);
 
 }
@@ -286,56 +306,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.game_button_home {
-    height: 44vh;
-    width: auto;
-}
-
-#game_button {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#hidden_card {
-    position: absolute;    
-    top: 3vh;
-    right: 3vw;
-}
-
-#ha {
-    position: absolute;    
-    top: 3vh;
-    right: 3vw;
-}
-
-#hk {
-    position: absolute;    
-    top: 3vh;
-    right: 3vw;
-}
-
-#hq {
-    position: absolute;    
-    top: 3vh;
-    right: 3vw;
-}
-
-#hj {
-    position: absolute;    
-    top: 3vh;
-    right: 3vw;
-}
-
-.game_button_active #hidden_card {
-    height: 50vh;
-}
-
+  }
 
 #container_game {
     background: url("https://image.freepik.com/free-vector/poker-table-background-green-color_47243-1073.jpg");
@@ -353,18 +325,21 @@ footer {
     color: white;
   }
 
+  #logo_log_in {
+    height: 150px;
+  }
+
   #container_log_in {
     height: 100vh;
+    width: 100vw;
     margin: 0px;
-    background-image: url(../img/homepage_background.jpg);
-    background-size: 140%;
+    background-image: url(../img/log_in_background.png);
+    background-size: 250%;
     background-position: center;
-
-    background-repeat: no-repeat;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   #back_arrow {
@@ -380,7 +355,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 8px 5px #888888;
+    box-shadow: 0px 0px 8px 1px #888888;
   }
 
   #back_arrow img {
@@ -393,9 +368,7 @@ footer {
     height: 40px;
     border-style: solid;
     border-radius: 5px;
-    background-image: linear-gradient(rgb(200, 200, 200), rgb(230, 230, 230));
     border-color: rgb(193, 193, 193);    
-    transition: 0.1s;
   }
 
   #log_in_img {
@@ -405,16 +378,12 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    grid-area: se;
   }
 
   #log_in_img img {
     height: 150px;
     position: absolute;
-  }
-
-  .active #age_log_in {
-    display: none;
-
   }
 
   #log_in_box {
@@ -555,15 +524,15 @@ top: 85px;
 #grid_wrapper_about {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 20vh 1150px 150px ;
+    grid-template-rows: 20vh 1300px 150px ;
     grid-template-areas: 
     "he"
     "co"
     "fo"
     ;
-    background-image: url(../img/homepage_background.jpg);
+    background-image: url(../img/about_background.jpg);
     background-repeat: no-repeat;
-    background-size: 200%;
+    background-size: 500%;
     background-position: center;
 } 
 
@@ -573,7 +542,7 @@ top: 85px;
     grid-area: co;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:25px 300px 25px 300px 25px 450px 25px;
+    grid-template-rows:25px 300px 25px 300px 25px 600px 25px;
     grid-template-areas:
     "u1"
     "ka"
@@ -591,7 +560,6 @@ top: 85px;
 
   #utfyllnad_2 {
     grid-area: u2;
-
   }
 
   #utfyllnad_3 {
@@ -617,21 +585,19 @@ top: 85px;
 
   #kontakter_about_2 {
     height: 200px;
-    width: 80vw;
+    width: 90vw;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     border-style: solid;
     border-radius: 5px;
     border-color: rgb(255, 255, 255);
-    background-image: linear-gradient(rgb(50, 50, 50), black);
-
+    background-color: rgba(0, 0, 0, 0.5);
   }
   
   #kontakter_about_2 a {
     color: rgb(200, 200, 200);
     font-family: sans-serif;
-    text-decoration: none;
     margin-left: 5vw;
   }
   #kontakter_about_2 :hover {
@@ -642,7 +608,7 @@ top: 85px;
 
   #google_maps {
     grid-area: ms;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -655,8 +621,7 @@ top: 85px;
   #google_maps a {
     color: rgb(200, 200, 200);
     font-family: sans-serif;
-    font-size: 1.25rem;
-    text-decoration: none;
+    font-size: 1rem;
   }
 
   #google_maps :hover {
@@ -665,53 +630,47 @@ top: 85px;
 }
 
   #google_maps img {
-    height: 200px;
+    width: 90vw;
     border-radius: 5px;
     border-style: solid;
     border-color: rgb(255, 255, 255);
-
   }
-
-
 
   #syfte_container {
     grid-area: sy;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
+    background-color: rgba(0, 0, 0, 0.3);
     border-top-style: solid;
     border-bottom-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: white;
     display: grid;
     grid-template-columns: 3fr 2fr;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "be be"
     "ia si"
     ;
   }
 
-  #alder_img {
-    grid-area: si;
-    height: 150px;
-    width: 150px;
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.5) ,rgb(30, 30, 30, 0.5));
-    border-style: solid;
-    border-color: rgb(94, 94, 94);
-    border-radius: 5px;
+  #syfte_container p {
+    margin: 10px;
   }
 
-  #alder_img img {
-    height: 130px;
+  #alder_img {
+    grid-area: si;
+    height: 100px;
+    width: 100px;
+    margin: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
   }
 
   #beroende {
     grid-area: be;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.8) ,rgb(30, 30, 30, 0.8));
+    background-color: rgba(0, 0, 0, 0.5);
     border-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: white;
     border-radius: 5px;
     margin-top: 30px;
     margin-left: 30px;
@@ -738,11 +697,12 @@ top: 85px;
     font-size: 0.8rem;
   }
 
-  #ingen_aldersgräns {
+  #ingen_aldersgrans {
     grid-area: ia;
-    background-image: linear-gradient(rgb(40, 40, 40), black);
+    background-color: rgba(0, 0, 0, 0.5);
     border-style: solid;
-    border-color: rgb(94, 94, 94);
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
     border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -753,8 +713,30 @@ top: 85px;
     flex-direction: column;
   }
 
+  #ingen_aldersgrans p {
+    margin: 10px;
+  }
+
+  #ingen_aldersgrans h1 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    color: rgb(170, 170, 170);
+  }
+
 
 @media screen and (min-width:800px){
+
+
+
+      #google_maps img {
+        width: 30vw;
+      }
+
+      #google_maps a {
+        font-size: 1.3rem;
+      }
 
       #grid_wrapper {
         display: grid;
@@ -773,12 +755,10 @@ top: 85px;
     #grid_wrapper_game {
       display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: 15vh 20px 100vh 20px 150px ;
+      grid-template-rows: 100px 100vh 150px ;
       grid-template-areas: 
       "he"
-      "u1"
       "co"
-      "u2"
       "fo"
       ;
       background-repeat: no-repeat;
@@ -794,12 +774,32 @@ top: 85px;
         grid-area: co;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-template-areas: 
-        "t1 gm"
-        "sc t2"
+        "sc gm"
         ;
     
+    }
+
+    .cards_game {
+      position: absolute;
+      height: 45vh;
+      box-shadow: -1px 0px 3px 1px black;
+      border-radius: 16px;
+      right: 20vw;
+      bottom: 20vh;
+    }
+
+    #ha {
+      transform: translateX(-15px) rotate(-10deg);
+    }
+
+    #hk {
+      transform: translateX(-30px) rotate(-20deg);
+    }
+
+    #hq {
+      transform: translateX(-45px) rotate(-30deg);
     }
 
     #link_list {
@@ -948,14 +948,12 @@ top: 85px;
         border-color: rgb(205, 205, 205);
     }
 
-    #grid_wrapper_about {
-        grid-template-rows: 100px 800px 150px ;
-    }
+ 
     #container_about {
         grid-area: co;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows:25px 325px 25px 400px 25px;
+        grid-template-rows:25px 325px 25px 300px 25px;
         grid-template-areas:
         "u1 u1"
         "ka ms"
@@ -965,13 +963,19 @@ top: 85px;
         ;
       }
 
+      
       #kontakter_about {
         border-right-style: solid;
+        grid-area: ka;
       }
     
       #kontakter_about_2 {
         height: 200px;
         width: 450px;
+      }
+
+      #google_maps {
+        grid-area: ms;
       }
     
       #google_maps img {
@@ -979,13 +983,11 @@ top: 85px;
       }
     
       #syfte_container {
-        height: 400px;
+        grid-area: sy;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas: 
-        "be ia"
-        "be si"
+        "be ia si"
         ;
       }
     
@@ -993,7 +995,8 @@ top: 85px;
         height: 150px;
         width: 150px;
         margin-bottom: 20px;
-        margin-left: 400px;
+        margin-right: 100px;
+
       }
     
       #alder_img img {
@@ -1003,6 +1006,13 @@ top: 85px;
       #beroende {
         border-radius: 5px;
         margin-bottom: 70px;
+        margin-left: 100px;
+        width: 25vw;
+        height: 40vh;
+      }
+
+      #beroende p {
+        margin: 20px;
       }
     
       .rubriker_about {
@@ -1020,31 +1030,37 @@ top: 85px;
         font-size: 1.25rem;
       }
     
-      #ingen_aldersgräns {
+      #ingen_aldersgrans {
         margin-top: 30px;
-        margin-right: 30px; 
-        
+        margin-right: 150px; 
+        width: 30vw;
+        height: 30vh;
+      }
 
+      p {
+        color: rgb(170, 170, 170);
       }
       
 
       #grid_wrapper_about {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 20vh 1150px 150px ;
+        grid-template-rows: 20vh 725px 150px ;
         grid-template-areas: 
         "he"
         "co"
         "fo"
         ;
-        background-image: url(../img/homepage_background.jpg);
-        background-repeat: no-repeat;
-        background-size: 200%;
-        background-position: center;
+        background-size: 250%;
     }
     
     #logo_header {
       height: 100px;
   }
+  #container_log_in {
+    background-size: 150%;
+  }
+
+ 
 
 }

@@ -8,10 +8,6 @@ function toggleMenu() {
     burger.classList.toggle('crossed_line')
 }
 
-function toggle_game_button() {
-    console.log("TEST")
-}
 
 document
 burger.addEventListener('click', toggleMenu) 
-game.addEventListener("mouseover", toggle_game_button())
