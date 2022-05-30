@@ -1,4 +1,4 @@
-let blackjackGame = {     //setup 
+let blackjackGame = {     //setup med globala variabler, spelarens och dealerns händers variabler
   you: {
     scoreSpan: "#your-blackjack-result",
     div: "#your-box",
@@ -35,7 +35,7 @@ let blackjackGame = {     //setup
   
 };
 
-const YOU = blackjackGame["you"];
+const YOU = blackjackGame["you"]; //döpa om variabler för din och dealerns hand
 const DEALER = blackjackGame["dealer"];
 
 
@@ -44,7 +44,7 @@ let windowWidth = window.screen.width;
 let windowHeight = window.screen.height;
 let winner;
 let play = false
-//Button Event Listeners
+//lyssnare som kopplar knapparna till funktioner
 document
   .querySelector("#blackjack-hit-button")
   .addEventListener("click", blackjackHit);
@@ -58,7 +58,7 @@ document
   .querySelector("#blackjack-reset-button")
   .addEventListener("click", blackjackRestart);
 
-function blackjackHit() {
+function blackjackHit() { //funktionen kallar på hjälpfunktioner och lägger till ett kort i spelarens hand, samt uppdaterar score och visar kortet
   
   if (play === true) {
     if (blackjackGame["isStand"] === false) {
@@ -78,7 +78,7 @@ function randomCard() {   //funktion som väljer slumpmässigt kort från kortle
   return blackjackGame["cards"][randomIndex];
 }
 
-function showCard(card, activePlayer) {
+function showCard(card, activePlayer) { //hjälpfunktion som tar in "card" och lägger till en bild på kortet åt "activeplayer"
   if (activePlayer["score"] <= 21) {
     let cardImage = document.createElement("img");
     cardImage.src = `img/card_deck/${card}.png`;
@@ -102,7 +102,7 @@ function updateScore(card, activePlayer) {    //Funktionen kollar om kortet som 
 }
 
 function showScore(activePlayer) {
-  //Bust logic if score is over 21
+  //hjälpfunktion som kontrollerar om någon förlorat och i sådanna fall i sin tur kallar på en hjälpfunktion för att visa vinnaren
   if (activePlayer["score"] > 21) {
     document.querySelector(activePlayer["scoreSpan"]).textContent = "BUST!";
     document.querySelector(activePlayer["scoreSpan"]).style.color = "red";
@@ -119,7 +119,7 @@ function showScore(activePlayer) {
   }
 }
 
-function blackjackStand() {
+function blackjackStand() { //funktion för att avsluta omgången och som kallar på hjälpfunktioner för att bestämma vinnare
   if (blackjackGame["isTurnsOver"] === false) {
     if (blackjackGame.pressOnce === false) {
       blackjackGame["isStand"] = true;
@@ -146,7 +146,7 @@ function blackjackStand() {
   }
 }
 
-function computeWinner() {
+function computeWinner() { //hjälpfunktion som räknar ut en vinnare
   if (YOU["score"] <= 21) {
     if (YOU["score"] > DEALER["score"] || DEALER["score"] > 21) {
       winner = YOU;
@@ -164,7 +164,7 @@ function computeWinner() {
   return winner;
 }
 
-function showWinner(winner) {
+function showWinner(winner) { //hjälpfunktion som visar vem som vann och uppdaterar scoreboard
   let message, messageColor;
 
   if (winner === YOU) {
@@ -190,7 +190,7 @@ function showWinner(winner) {
   document.querySelector("#blackjack-result").style.color = messageColor;
 }
 
-function blackjackDeal() {
+function blackjackDeal() {//funktion som startar ny omgång 
   play = true;
   if (blackjackGame["isTurnsOver"] === true) {
     // Select all the images in both the user and dealer box
@@ -237,7 +237,7 @@ function blackjackDeal() {
 
 }
 
-function blackjackRestart() {
+function blackjackRestart() {//funktion som nollställer scoreboard och börjar en ny omgång
   document.querySelector("#wins").textContent = 0;
   document.querySelector("#losses").textContent = 0;
   document.querySelector("#draws").textContent = 0;
