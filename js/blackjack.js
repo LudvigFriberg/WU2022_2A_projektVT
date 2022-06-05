@@ -1,4 +1,4 @@
-let blackjackGame = {     //setup med globala variabler, spelarens och dealerns händers variabler
+let blackjackGame = {     //Global klass meed olika variabler som man lätt kan kalla på med klassnamnet "blackJackGame["variabelnamn"]"
   you: {
     scoreSpan: "#your-blackjack-result",
     div: "#your-box",
@@ -13,7 +13,7 @@ let blackjackGame = {     //setup med globala variabler, spelarens och dealerns 
     score: 0,
   },
 
-  cards: ["h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "hK", "hJ", "hQ", "hA",  //En array som innehåller namn för alla kort
+  cards: ["h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "hK", "hJ", "hQ", "hA",  //En array som innehåller namn för alla kort. Den används för att dra kort när spelet väl är igång
           "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "d10", "dK", "dJ", "dQ", "dA",
           "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9", "s10", "sK", "sJ", "sQ", "sA",
           "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "cK", "cJ", "cQ", "cA"],
@@ -73,12 +73,12 @@ function blackjackHit() { //funktionen kallar på hjälpfunktioner och lägger t
   }
 }
 
-function randomCard() {   //funktion som väljer slumpmässigt kort från kortleken
+function randomCard() {   //funktion som väljer slumpmässigt kort från arrayen med kortnamnen
   let randomIndex = Math.floor(Math.random() * 52);
   return blackjackGame["cards"][randomIndex];
 }
 
-function showCard(card, activePlayer) { //hjälpfunktion som tar in "card" och lägger till en bild på kortet åt "activeplayer"
+function showCard(card, activePlayer) { //hjälpfunktion som tar in "card" och lägger till en bild på kortet åt "activeplayer". Genom att döpa bilderna till samma namn som korten blev det enkelt att navigera till kortet i mappen
   if (activePlayer["score"] <= 21) {
     let cardImage = document.createElement("img");
     cardImage.src = `img/card_deck/${card}.png`;
@@ -203,19 +203,17 @@ function blackjackDeal() {//funktion som startar ny omgång
 
     document.querySelector("#blackjack-result").style.color = "white";
 
-    //Sets the user and dealers scors to zero
+
     YOU["score"] = DEALER["score"] = 0;
     document.querySelector("#your-blackjack-result").textContent = 0;
     document.querySelector("#dealer-blackjack-result").textContent = 0;
 
-    //Reset color back to white
     document.querySelector("#your-blackjack-result").style.color = "white";
     document.querySelector("#dealer-blackjack-result").style.color = "white";
 
-    //Reset to Let's Play
     document.querySelector("#blackjack-result").textContent = "Lets Play";
 
-    //Removes the cards in the user's box
+    //tar bort korten 
     for (let i = 0; i < yourImages.length; i++) {
       yourImages[i].remove();
     }
@@ -237,7 +235,7 @@ function blackjackDeal() {//funktion som startar ny omgång
 
 }
 
-function blackjackRestart() {//funktion som nollställer scoreboard och börjar en ny omgång
+function blackjackRestart() {//funktion som nollställer scoreboard och börjar en ny omgång genom att kalla på "deal" hjälpfunktionen
   document.querySelector("#wins").textContent = 0;
   document.querySelector("#losses").textContent = 0;
   document.querySelector("#draws").textContent = 0;
